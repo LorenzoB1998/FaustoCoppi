@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <title>La Fausto Coppi</title>
+
+  <!-- CSS -->
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet"/>
+  <link href="css/materialize.css" type="text/css" rel="stylesheet" media="screen,projection"/>
+  <link href="css/style.css" type="text/css" rel="stylesheet" media="screen,projection"/>
+  
+  <!-- Css Background-->
+  <style type="text/css">
+    body{
+      background-image: url("images/backgroundHome.jpg") !important; 
+    }
+    .contatore{
+      background: #fff;
+      font-family: arial;
+      font-size: 20px;
+      padding: 2%;
+   }
+  </style>
+
+</head>
+<body>
+
+<!--Menu-->
+  <script type="text/javascript" src="includes/menu.js"></script>
+
+  <!-- Form -->
+  <div class="formBlock">
+    <center class="header">
+          <h3><b>HOME</b> <!--  <i class="small material-icons">directions_bike</i>--></h3>
+          <i class="medium material-icons">directions_bike</i>
+
+    </center>
+    <div class="container">
+      <a onclick="window.open('http://www.faustocoppi.net/new/');">
+         SITO WEB
+      </a>
+      <a onclick="window.open('edizione2018.html','_self');">
+        Edizione 2018
+      </a>
+
+      <a onclick="window.open('percorsi.html','_self');">
+        Percorsi
+      </a>
+
+      <!--Num che si incrementa, come nel sito
+       <span class="number">4125</span> 
+        Contatore
+       -->
+       <div class="contatore">
+
+          <p id="demo"></p>
+
+          <script>
+          // Set the date we're counting down to
+          var countDownDate = new Date("Jul 9, 2018 09:00:00").getTime();
+
+          // Update the count down every 1 second
+          var x = setInterval(function() {
+
+            // Get todays date and time
+            var now = new Date().getTime();
+
+            // Find the distance between now an the count down date
+            var distance = countDownDate - now;
+
+            // Time calculations for days, hours, minutes and seconds
+            var days = Math.floor(distance / (1000 * 60 * 60 * 24));
+            var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+            var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+            var seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+            // Display the result in the element with id="demo"
+            document.getElementById("demo").innerHTML = days + "D " + hours + "H "
+            + minutes + "M " + seconds + "S ";
+
+            // If the count down is finished, write some text 
+            if (distance < 0) {
+              clearInterval(x);
+              document.getElementById("demo").innerHTML = "EXPIRED";
+            }
+          }, 1000);
+          </script>
+
+          <div class="progress">
+            <div class="indeterminate"></div>
+          </div>
+        </div>
+
+    </div>
+  </div>
+
+  <!--  Scripts-->
+  <script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+  <script src="js/materialize.js"></script>
+  <script src="js/init.js"></script>
+  </body>
+</html>
